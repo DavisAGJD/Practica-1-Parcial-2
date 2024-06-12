@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header > 
+        <h1>Lista de tareas</h1>
+        <p>Aqui se podran registar las tareas a elaborar</p>
+    </header>
+
+
+    <main>
+
+        <div id="container">
+            <div class="formulario">
+                <h2>Registro tarea</h2>
+                <form id="task-form">
+                    <label for="tareaname">Nueva tarea:</label>
+                    <input type="text" id="tareaname" name="tareaname" required>
+                    
+                    <label for="fechainicio">Fecha inicio:</label>
+                    <input type="date" id="fechainicio" name="fechainicio" required>
+                    
+                    <label for="fechafin">Fecha fin:</label>
+                    <input type="date" id="fechafin" name="fechafin" required>
+                    
+                    <label for="responsable">Responsable:</label>
+                    <input type="text" id="responsable" name="responsable" required>
+                    
+                    <button type="button" class="button" id="guardardatos" onclick="guardarInformacion()">Guardar tarea</button>
+                </form>
+            </div>
+
+
+            <div class="filtros">
+                <input type="text" id="buscar" placeholder="Buscar tareas..." oninput="buscarTareas()">
+                <button class="btn btn-secondary" onclick="mostrarTodas()">Todas</button>
+                <button class="btn btn-secondary" onclick="mostrarResueltas()">Resueltas</button>
+                <button class="btn btn-secondary" onclick="mostrarVencidas()">Vencidas</button>
+            </div>
+            
+            <div class="task-list" id="task-list">
+
+            </div>
+            
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
